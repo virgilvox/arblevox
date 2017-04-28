@@ -1,29 +1,17 @@
 language: node_js
 node_js:
-- '5'
-branches:
-  only:
-  - /^v[0-9]/
-env:
-  global: CDN=https://arblevox-static.octoblu.com
-after_success:
-- npm run coverage
-- npm run mocha:json
-- bash <(curl -s https://codecov.io/bash)
-- bash <(curl -s https://codecov.octoblu.com/bash)
+- '7'
 before_deploy:
-- npm run build
-- export PKG_VERSION="$(node -e 'console.log(require("./package.json").version)')"
-- if [ -z "$PKG_VERSION" ]; then echo 'Missing PKG_VERSION env' && exit 1; fi
-- mkdir -p dpl_assets/v$PKG_VERSION
-- cp -r dist/* dpl_assets/v$PKG_VERSION
+- npm run build:webpack
 deploy:
-- provider: s3
-  access_key_id: # access key id
-  secret_access_key: # make sure its secure
-  bucket: arblevox-static.octoblu.com
-  local_dir: dpl_assets
+  provider: s3
+  access_key_id: AKIAIC7HP2MD2S4MT5JA
+  secret_access_key:
+    secure: px7Y/DGOGPEBAx22IWBJf9HvYOBdcM7DMIyIQi3ceRRrDienOky0UfNgVnWiges2e8UeSz9SbrJNNHBQGysutMUWuLFt+cg0Yrej2Ymmrf248yYkr0QnFjtbEXlDFinWqGTsxB3SHHQwjY6DqG1+6wupUU9PrvDKst7P2uwXHoOU/Xzi/N81FxFK0SoKp84GZX9Xz1JaqANvqKbNSiMybcdUC+ZLpV3DZCivp52xKRm5xt1TfySy0iUgOefIh6fG3dP9Uh5GbmQxi/asp5tvz56jLGeFveSa8G49aedUQyg18oYv4KG8z7CYpOLhcVO/vdE/RVwBdmBf/pTrygYvt0gN2rT42VfZ4hz4I5keKd+Bg7Foqyc0CPApwv9bobKMWuS7CdeGrLsNcOqdCkfWz87yi8XICxXpmc108iy/PlFZsMRuHrDoLW/30nnzjBb+OzhTsGXndvOyn301r6qpiJwmXMojBOD7j8FWZ6nJRmmHa2WkJHVY19D3iiDH61Maia71AuGwfpcLVk9l+WF7liS4ZHiOr97FGFSiGFsZodKYr4/JwnFMbio0d20EG+KTdnwfNYChhhXgR8Uz+SV/wechop84hamRVQ5h40D3Su4bw/xahTdY+dJLLfp/jRPGuNSQv2GYJjDmpquTp2Gb545AGoNC//64YdrEI5fWoRA=
+  bucket: synth.online
+  local_dir: dist
   skip_cleanup: true
   region: us-west-2
+  acl: public_read
   on:
     tags: true
