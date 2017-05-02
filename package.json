@@ -34,11 +34,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.4",
     "material-ui": "^0.17.4",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-qr-reader": "^1.0.5",
-    "react-router": "^2.6.0"
+    "react-router": "^2.6.0",
+    "web-bluetooth": "^0.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
