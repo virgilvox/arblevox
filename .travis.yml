@@ -8,7 +8,7 @@ deploy:
   access_key_id: AKIAIC7HP2MD2S4MT5JA
   secret_access_key:
     secure: px7Y/DGOGPEBAx22IWBJf9HvYOBdcM7DMIyIQi3ceRRrDienOky0UfNgVnWiges2e8UeSz9SbrJNNHBQGysutMUWuLFt+cg0Yrej2Ymmrf248yYkr0QnFjtbEXlDFinWqGTsxB3SHHQwjY6DqG1+6wupUU9PrvDKst7P2uwXHoOU/Xzi/N81FxFK0SoKp84GZX9Xz1JaqANvqKbNSiMybcdUC+ZLpV3DZCivp52xKRm5xt1TfySy0iUgOefIh6fG3dP9Uh5GbmQxi/asp5tvz56jLGeFveSa8G49aedUQyg18oYv4KG8z7CYpOLhcVO/vdE/RVwBdmBf/pTrygYvt0gN2rT42VfZ4hz4I5keKd+Bg7Foqyc0CPApwv9bobKMWuS7CdeGrLsNcOqdCkfWz87yi8XICxXpmc108iy/PlFZsMRuHrDoLW/30nnzjBb+OzhTsGXndvOyn301r6qpiJwmXMojBOD7j8FWZ6nJRmmHa2WkJHVY19D3iiDH61Maia71AuGwfpcLVk9l+WF7liS4ZHiOr97FGFSiGFsZodKYr4/JwnFMbio0d20EG+KTdnwfNYChhhXgR8Uz+SV/wechop84hamRVQ5h40D3Su4bw/xahTdY+dJLLfp/jRPGuNSQv2GYJjDmpquTp2Gb545AGoNC//64YdrEI5fWoRA=
-  bucket: synth.online
+  bucket: curie.link
   local_dir: dist
   skip_cleanup: true
   region: us-west-2
